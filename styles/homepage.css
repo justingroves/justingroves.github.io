@@ -1,0 +1,75 @@
+/* -------- Box styles -------- */
+html {
+  background-color: #efefef;
+}
+
+body {
+  font: 1.2em / 1.5 system-ui;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+}
+
+ul {
+    background-color: white;
+    border: 5px solid rgb(13, 0, 155);
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+}
+
+/* --------- Text styles --------- */
+h1 {
+    color: rgb(2, 109, 20);
+    font-family: 'Permanent Marker';
+    font-size: 2rem;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-style: bold;
+    font-size: 1.5rem;
+}
+
+.job-title {
+    color: darkslategray;
+    font-weight: bold;
+}
+
+a:link {
+    color: green;
+}
+
+a:hover,
+a:focus {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+.image-container {
+    max-width: 200px;
+    padding: 10px;
+    flex: 1
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10%;
+}
+
+header {
+    display: flex;
+}
+
+.header-box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: start;
+    flex: 1;
+}
+
+.body-text {
+    text-align: center;
+}
