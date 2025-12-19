@@ -1,6 +1,6 @@
 /* -------- Box styles -------- */
 html {
-  background-color: #efefef;
+  background-color: #77849c;
 }
 
 body {
@@ -10,8 +10,23 @@ body {
   margin: 0 auto 0 auto;
 }
 
-ul {
-    background-color: white;
+.site-header {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav {
+    max-width: 1200px;
+    max-height: 25px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-info {
+    background-color: rgb(255, 255, 255);
     border: 5px solid rgb(13, 0, 155);
     padding: 10px 30px 10px 30px;
     border-radius: 20px;
@@ -19,8 +34,9 @@ ul {
 
 /* --------- Text styles --------- */
 h1 {
-    color: rgb(2, 109, 20);
-    font-family: 'Permanent Marker';
+    color: rgb(255, 255, 255);
+    font-family: 'Libre Baskerville';
+    font-variant: small-caps;
     font-size: 2rem;
     margin-bottom: 0px;
 }
@@ -31,12 +47,16 @@ h2 {
 }
 
 .job-title {
-    color: darkslategray;
+    color: rgb(207, 219, 221);
     font-weight: bold;
 }
 
-a:link {
-    color: green;
+.nav-links {
+    list-style-type: none;
+}
+
+nav a:link {
+    color: #ffbeb6;
 }
 
 a:hover,
@@ -55,10 +75,10 @@ a:focus {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10%;
+    border-radius: 50%;
 }
 
-header {
+.page-header {
     display: flex;
 }
 
@@ -71,5 +91,6 @@ header {
 }
 
 .body-text {
+    color: white;
     text-align: center;
 }

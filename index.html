@@ -2,25 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="author" content="Justin Groves" />
+    <meta
+        name="description"
+        content="Personal website of Justin Groves, PhD - Data Scientist and ML Enthusiast." />
+
+    <!-- Open Graph elements -->
+    <meta property="og:title" content="Justin Groves, PhD" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Senior Data Scientist and Machine Learning Enthusiast" />
+    <meta property="og:image" content="https://justingroves.com/images/og-preview.png" />
+    <meta property="og:url" content="https://justingroves.com/" />
+
+    <!-- Link elements -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/homepage.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caveat:wght@400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title>Justin Groves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Justin Groves - Sr. Data Scientist</title>
   </head>
 
   <body>
-    <header>
+
+    <header class="site-header">
+        <nav class="nav">
+            <a href="/" class="logo"><strong>Home</strong></a>
+
+            <ul class="nav-links">
+                <li><a href="/resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
         <div class="header-box">
-            <h1>JUSTIN GROVES, PhD</h1>
+            <h1>Justin Groves, PhD</h1>
             <div class="job-title">
-                <p>Sr. Data Scientist</p>
+                <p><em>Sr. Data Scientist and Machine Learning Enthusiast</em></p>
             </div>
         </div>
         <div class="image-container">
-            <img src="images/profile_headshot.JPG" alt="A photo of Justin Groves overlooking a lake."/>
+            <img src="images/profile_headshot.png" alt="A photo of Justin Groves overlooking a lake."/>
         </div>
-    </header>
+    </section>
     <section class="body-text">
     <p>
         <em>The Doctor is in.</em> </br />
@@ -29,7 +54,7 @@
     </section>
     <section>
     <h2>Contact information</h2>
-        <ul>
+        <ul class="contact-info">
             <li>Email: <a href="mailto:jagroves95@gmail.com">jagroves95@gmail.com</a></li>
             <li><a href="https://github.com/justingroves">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/justin-a-groves/">LinkedIn</a></li>
