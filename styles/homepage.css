@@ -1,3 +1,13 @@
+/* -------- Variables --------- */
+:root {
+    --color-link: #ffbeb6;
+    --color-link-hover: #ff8c7d;
+    --color-link-visited: var(--color-link);
+    --color-text-white: #ffffff;
+    --color-background: #77849c;
+    --color-banner: #1f2a37;
+}
+
 /* -------- Box styles -------- */
 html {
   background-color: #77849c;
@@ -5,12 +15,15 @@ html {
 
 body {
   font: 1.2em / 1.5 system-ui;
-  padding: 0 1rem;
   margin: 0 auto 0 auto;
 }
 
 .site-header {
-    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-banner);
+    border-bottom: 1px solid var(--color-text-white);
 }
 
 .nav {
@@ -21,19 +34,12 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-}
-
-.contact-info {
-    background-color: rgb(255, 255, 255);
-    border: 5px solid rgb(13, 0, 155);
-    padding: 10px 30px 10px 30px;
-    border-radius: 20px;
+    justify-content: space-between;
 }
 
 /* --------- Text styles --------- */
 h1 {
-    color: rgb(255, 255, 255);
+    color: var(--color-text-white);
     font-family: 'Libre Baskerville';
     font-variant: small-caps;
     font-size: 2rem;
@@ -46,7 +52,7 @@ h2 {
 }
 
 .job-title {
-    color: rgb(207, 219, 221);
+    color: #cfdbdd;
     font-weight: bold;
 }
 
@@ -55,23 +61,24 @@ h2 {
     list-style-type: none;
 }
 
-nav a:link {
-    color: #ffbeb6;
-}
-
+nav a:link,
 nav a:visited {
-    color: #ffbeb6;
+    color: var(--color-link);
 }
 
 nav a:hover,
 nav a:focus {
-    color: #ff8c7d;
+    color: var(--color-link-hover);
     text-decoration: none;
 }
 
 nav a[aria-current="page"]{
     pointer-events: none;
     text-decoration: none;
+}
+
+.page {
+  padding: 0 2rem;
 }
 
 .image-container {
@@ -100,7 +107,7 @@ nav a[aria-current="page"]{
 }
 
 .body-text {
-    color: white;
+    color: var(--color-text-white);
     text-align: center;
 }
 
@@ -124,11 +131,11 @@ nav a[aria-current="page"]{
 
 .social-icons a {
     font-size: 2.25rem;
-    color: #ffbeb6;
+    color: var(--color-link);
 }
 
 .social-icons a:hover {
-    color: #ff8c7d;
+    color: var(--color-link-hover);
 }
 
 @keyframes bounce {
