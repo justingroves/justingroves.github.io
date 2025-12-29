@@ -96,6 +96,8 @@ nav a[aria-current="page"]{
 
 .page-header {
     display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .header-box {
@@ -126,7 +128,7 @@ nav a[aria-current="page"]{
 .social-icons {
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
 }
 
 .social-icons a {
