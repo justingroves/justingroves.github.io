@@ -14,6 +14,10 @@
     <meta property="og:image" content="https://www.justingroves.com/images/og-preview.jpg" />
     <meta property="og:url" content="https://www.justingroves.com/" />
 
+    <!-- Embedded Scripts -->
+    <script src="https://kit.fontawesome.com/c1ab729dc8.js" crossorigin="anonymous"></script>
+    <script src="scripts/main.js" defer></script>
+
     <!-- Link elements -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/homepage.css"/>
@@ -27,17 +31,25 @@
 
     <header class="site-header">
         <nav class="nav">
-            <a href="/" class="logo"><strong>Home</strong></a>
+            <a href="/" aria-current="page" class="active">Home</a>
 
             <ul class="nav-links">
                 <li><a href="/resume.html">Resume</a></li>
+            </ul>
+
+            <ul class="social-icons">
+                <li><a href="mailto:jagroves95@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/justin-a-groves/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                <li><a href="https://github.com/justingroves"><i class="fa-brands fa-square-github"></i></a></li>
             </ul>
         </nav>
     </header>
 
     <section class="page-header">
         <div class="header-box">
-            <h1>Justin Groves, PhD</h1>
+            <div class="header-tag">
+                <h1>Justin Groves, PhD</h1>
+            </div>
             <div class="job-title">
                 <p><em>Sr. Data Scientist and Machine Learning Enthusiast</em></p>
             </div>
@@ -51,14 +63,6 @@
         <em>The Doctor is in.</em> </br />
         Non-statistically significant results may vary.
     </p>
-    </section>
-    <section>
-    <h2>Contact information</h2>
-        <ul class="contact-info">
-            <li>Email: <a href="mailto:jagroves95@gmail.com">jagroves95@gmail.com</a></li>
-            <li><a href="https://github.com/justingroves">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/justin-a-groves/">LinkedIn</a></li>
-        </ul>
     </section>
   </body>
 </html>
