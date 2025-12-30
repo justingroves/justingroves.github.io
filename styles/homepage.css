@@ -1,4 +1,5 @@
 /* -------- Variables --------- */
+
 :root {
     --color-link: #ffbeb6;
     --color-link-hover: #ff8c7d;
@@ -8,137 +9,7 @@
     --color-banner: #1f2a37;
 }
 
-/* -------- Box styles -------- */
-html {
-  background-color: #77849c;
-}
-
-body {
-  font: 1.2em / 1.5 system-ui;
-  margin: 0 auto 0 auto;
-}
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--color-banner);
-    border-bottom: 1px solid var(--color-text-white);
-}
-
-.nav {
-    max-width: 1200px;
-    max-height: 25px;
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* --------- Text styles --------- */
-h1 {
-    color: var(--color-text-white);
-    font-family: 'Libre Baskerville';
-    font-variant: small-caps;
-    font-size: 2rem;
-    margin-bottom: 0px;
-}
-
-h2 {
-    font-style: bold;
-    font-size: 1.5rem;
-}
-
-.job-title {
-    color: #cfdbdd;
-    font-weight: bold;
-}
-
-.nav-links,
-.social-icons {
-    list-style-type: none;
-}
-
-nav a:link,
-nav a:visited {
-    color: var(--color-link);
-}
-
-nav a:hover,
-nav a:focus {
-    color: var(--color-link-hover);
-    text-decoration: none;
-}
-
-nav a[aria-current="page"]{
-    pointer-events: none;
-    text-decoration: none;
-}
-
-.page {
-  padding: 0 2rem;
-}
-
-.image-container {
-    max-width: 200px;
-    padding: 10px;
-    flex: 1
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 50%;
-}
-
-.page-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.header-box {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    flex: 1;
-}
-
-.body-text {
-    color: var(--color-text-white);
-    text-align: center;
-}
-
-.iframe-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.pdf-iframe-embed {
-    margin: 0!important;
-    border: 0;
-    width: 99vh;
-    height: 97vh;
-}
-
-.social-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icons a {
-    font-size: 2.25rem;
-    color: var(--color-link);
-}
-
-.social-icons a:hover {
-    color: var(--color-link-hover);
-}
+/* -------- Animations --------- */
 
 @keyframes bounce {
     0%, 100% {transform: translateY(0); }
@@ -146,6 +17,286 @@ nav a[aria-current="page"]{
     60% {transform: translateY(0); }
 }
 
+/* -------- Utilities --------- */
+
 .icon-bounce {
     animation: bounce 0.6s ease;
+}
+
+/* -------- Top styles -------- */
+
+html {
+  background-color: #77849c;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font: 1.2em / 1.5 system-ui;
+  margin: 0 auto 0 auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--color-banner);
+    color: var(--color-text-white);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------- Navigation Bar -------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-banner);
+    border-bottom: 1px solid var(--color-text-white);
+
+    & .nav {
+        height: 25px;
+        display: flex;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+
+        & .nav-toggle { display: none; }
+
+        & .nav-menu {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+
+            & .nav-exit { display: none; }
+
+            & .nav-links,
+            & .social-icons {
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            & .nav-links {
+                gap: 1.5rem;
+
+                & a:link,
+                & a:visited {
+                    color: var(--color-link);
+                }
+
+                & a:hover,
+                & a:focus {
+                    color: var(--color-link-hover);
+                    text-decoration: none;
+                }
+
+                & a[aria-current="page"] {
+                    pointer-events: none;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        & .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce;
+
+            & a {
+                font-size: 2.25rem;
+                color: var(--color-link);
+
+                & :hover { color: var(--color-link-hover) }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        & .nav {
+            max-width: 1200px;
+            max-height: 100%;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            & .nav-toggle {
+                display: block;
+                font-size: 1.5rem;
+                background: none;
+                border:none;
+                color: var(--color-link);
+
+                & :active { color: var(--color-link-hover); }
+            }
+
+            & .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 40%;
+                height: 100vh;
+                background: var(--color-banner);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 3rem 0.5rem 0.5rem 0.5rem;
+
+                /* Control nav-menu open transition */
+                transition: left 0.3s ease;
+                z-index: 1001;
+
+                & .nav-exit{
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    display: block;
+                    font-size: 1.5rem;
+                    background: none;
+                    border: none;
+                    color: var(--color-link)
+                }
+
+                & .nav-links {
+                    list-style-type: none;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    gap: .5rem;
+                    font-size: 1.5rem;
+
+                    & a:link,
+                    & a:visited {
+                        color: var(--color-link);
+                    }
+
+                    & a:hover,
+                    & a:focus {
+                        color: var(--color-link-hover);
+                        text-decoration: none;
+                    }
+
+                    & a[aria-current="page"] {
+                        pointer-events: none;
+                        text-decoration: none;
+                    }
+                }
+
+                & .social-icons {
+                    list-style-type: none;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    & i { font-size: 3.5rem; }
+                }
+
+            }
+
+            & .nav-menu.open {
+                display: flex;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* ------- Home Page ------- */
+
+.page {
+  padding: 0 2rem;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 2rem;
+    }
+}
+
+.profile-pic {
+    max-width: 200px;
+    padding: 1.5rem;
+    flex: 1;
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        padding: 1.5rem;
+        flex: 1
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 50%;
+    }
+}
+
+.profile-name {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    flex: 1;
+
+    & h1 {
+        color: var(--color-text-white);
+        font-family: 'Libre Baskerville';
+        font-variant: small-caps;
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+
+    & .job-title {
+        color: #cfdbdd;
+        font-weight: bold;
+    }
+}
+
+.body-text {
+    color: var(--color-text-white);
+    text-align: center;
+}
+
+/* ------- Resume Page -------- */
+
+.iframe-wrapper {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.pdf-iframe-embed {
+    margin: 0!important;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
 }
