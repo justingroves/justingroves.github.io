@@ -25,19 +25,20 @@
 
 /* -------- Top styles -------- */
 
-html {
+html, body {
   background-color: #77849c;
-  height: 100%;
-  width: 100%;
+  margin: 0 auto;
 }
 
 body {
   font: 1.2em / 1.5 system-ui;
-  margin: 0 auto 0 auto;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+}
+
+.page {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
@@ -51,6 +52,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 /* -------- Navigation Bar -------- */
@@ -68,7 +70,7 @@ footer {
         margin: 0 auto;
         padding: 1rem 1.5rem;
 
-        & .nav-toggle { display: none; }
+        & .mobile-nav { display: none; }
 
         & .nav-menu {
             display: flex;
@@ -125,7 +127,7 @@ footer {
     @media (max-width: 768px) {
 
         & .nav {
-            max-width: 1200px;
+            max-width: 100%;
             max-height: 100%;
             margin: 0 auto;
             padding: 1rem 1.5rem;
@@ -134,7 +136,13 @@ footer {
             align-items: center;
             justify-content: flex-start;
 
-            & .nav-toggle {
+            & .mobile-nav {
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                & .nav-toggle {
                 display: block;
                 font-size: 1.5rem;
                 background: none;
@@ -142,6 +150,18 @@ footer {
                 color: var(--color-link);
 
                 & :active { color: var(--color-link-hover); }
+                }
+
+                & .nav-logo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--color-text-white);
+                    font-family: 'Libre Baskerville';
+                    font-variant: small-caps;
+                    font-size: 1.5rem;
+                    width: 100%;
+                }
             }
 
             & .nav-menu {
@@ -217,11 +237,11 @@ footer {
 
 /* ------- Home Page ------- */
 
-.page {
-  padding: 0 2rem;
+.main-body {
+    padding: 0 2rem;
 }
 
-.about-me {
+.business-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,9 +297,30 @@ footer {
     }
 }
 
-.body-text {
+.tag-line {
     color: var(--color-text-white);
     text-align: center;
+}
+
+.about-me {
+    font-family: 'Libre Baskerville';
+
+    & h2 {
+        color: var(--color-text-white)
+    }
+
+    & p {
+        & a:link,
+        & a:visited {
+            color: var(--color-link);
+        }
+
+        & a:hover,
+        & a:focus {
+            color: var(--color-link-hover);
+            text-decoration: none;
+        }
+    }
 }
 
 /* ------- Resume Page -------- */

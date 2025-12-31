@@ -33,9 +33,14 @@
     <header class="site-header">
         <nav class="nav">
 
-            <button class="nav-toggle" area-label="Open menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="mobile-nav">
+                <button class="nav-toggle" area-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="nav-logo">
+                    <p>Justin Groves</p>
+                </div>
+            </div>
 
             <div class="nav-menu">
 
@@ -57,30 +62,72 @@
         </nav>
     </header>
 
-    <main class="page">
-        <section class="about-me">
-            <div class="profile-pic">
-                <img src="images/profile-picture.jpg" alt="A photo of Justin Groves overlooking a lake."/>
-            </div>
-            <div class="profile-name">
-                <div class="header-tag">
-                    <h1>Justin Groves, PhD</h1>
+    <div class="page">
+        <main class="main-body">
+            <section class="business-card">
+                <div class="profile-pic">
+                    <img src="images/profile-picture.jpg" alt="A photo of Justin Groves overlooking a lake."/>
                 </div>
-                <div class="job-title">
-                    <p><em>Sr. Data Scientist and Machine Learning Enthusiast</em></p>
+                <div class="profile-name">
+                    <div class="header-tag">
+                        <h1>Justin Groves, PhD</h1>
+                    </div>
+                    <div class="job-title">
+                        <p><em>Sr. Data Scientist & Machine Learning Enthusiast</em></p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="body-text">
-        <p>
-            <em>The Doctor is in.</em> </br />
-            Non-statistically significant results may vary.
-        </p>
-        </section>
-    </main>
+            </section>
+            <section class="tag-line">
+            <p>
+                <em>The Doctor is in.</em> </br />
+                Non-statistically significant results may vary.
+            </p>
+            </section>
 
-    <footer>
-        &copy; <span id="year"></span> &nbsp; Justin Groves. All rights reserved.
-    </footer>
+            <section class="about-me">
+                <h2>Who Am I?</h2>
+                <p>
+                    Problem solving is a core part of my work, and currently that includes taking messy data and
+                    translating it into business solutions. I work across all facets of the data lifecycle including
+                    engineering, analytics, and modeling (occassionally with results that are statistically significant.)
+                </p>
+
+                <h2>Where Am I?</h2>
+                <p>
+                    Currently I'm a Sr. Data Scientist with <a href="https://reefpointgroup.com/" target="_blank">ReefPoint Group</a>,
+                    a D.C. based government consulting firm. In my time I've worked extensively with Palantir Foundry
+                    and Microsoft Power Platform understanding the business needs of non-technical stakeholders and
+                    turning them into data-driven solutions for the VA.
+                </p>
+                <p>
+                    Some of my notable projects include building a
+                    classification model for detecting demographic collection points in VA forms and building out a full
+                    database management system (DBMS) with Microsoft Power Platform for tracking and analyzing
+                    <a href="https://pra.digital.gov/" target="_blank">Paperwork Reduction Act (PRA)</a> collections as
+                    they move through the approval lifecycle.
+                </p>
+                <h2>Where Will I Be?</h2>
+                <p>
+                    My goal is to continue to understand more of the data ecosystem. I aim to understand and implement
+                    cloud-based machine learning systems from end-to-end, getting the data out of the warehouses and into
+                    the hands of those who need it the most.
+                </p>
+                <p>
+                    There's no shortage of tools in the AI landscape, and I aim to leverage those for maximum efficiency.
+                    I continue to research and explore Natural Language Processing (NLP) and speech-to-text models (like
+                    Open AI's <a href="https://openai.com/index/whisper/" target="_blank">Whisper</a>) to extract insight
+                    from spoken word.
+                </p>
+
+                <div class="tag-line">
+                    <p><em>The future is now, and data is the key to the lock.</em></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; <span id="year"></span> &nbsp; Justin Groves. All rights reserved.
+        </footer>
+    </div>
   </body>
 </html>
