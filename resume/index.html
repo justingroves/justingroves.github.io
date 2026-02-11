@@ -13,15 +13,15 @@
     <meta property="og:type" content="profile" />
     <meta property="og:description" content="Resume of Justin Groves, Senior Data Scientist and Machine Learning Enthusiast" />
     <meta property="og:image" content="https://www.justingroves.com/images/og-preview.jpg" />
-    <meta property="og:url" content="https://www.justingroves.com/resume.html" />
+    <meta property="og:url" content="https://www.justingroves.com/resume/" />
 
     <!-- Embedded Scripts -->
     <script src="https://kit.fontawesome.com/c1ab729dc8.js" crossorigin="anonymous"></script>
-    <script src="scripts/main.js" defer></script>
+    <script src="../scripts/main.js" defer></script>
 
     <!-- Link elements -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="styles/homepage.css"/>
+    <link rel="stylesheet" href="/styles/main.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/resume.html" aria-current="page">Resume</a></li>
+                    <li><a href="/resume/" aria-current="page">Resume</a></li>
                 </ul>
 
                 <ul class="social-icons">
@@ -62,21 +62,22 @@
         </nav>
     </header>
 
-    <main class="page">
-        <section class="resume-section">
-            <div class="header-box">
-                <h1>Resume</h1>
-            </div>
+    <div class="page">
+        <main class="main-body">
+            <section class="resume-section">
+                <div class="header-box">
+                    <h1>Resume</h1>
+                </div>
 
-            <div class="iframe-wrapper">
-            <!-- Fix the height  -->
-            <iframe src="/files/Justin_Groves_Resume.pdf" class="pdf-iframe-embed" title="Justin Groves Resume">
-                Your browser does not support PDFs.
-                <a href="/files/Justin_Groves_Resume.pdf" target="_blank">Download PDF</a>
-            </iframe>
-            </div>
-        </section>
-    </main>
+                <div class="iframe-wrapper">
+                    <iframe src="/files/Justin_Groves_Resume.pdf" class="pdf-iframe-embed" title="Justin Groves Resume">
+                        Your browser does not support PDFs.
+                        <a href="/files/Justin_Groves_Resume.pdf" target="_blank">Download PDF</a>
+                    </iframe>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
         &copy; <span id="year"></span> &nbsp; Justin Groves. All rights reserved.
