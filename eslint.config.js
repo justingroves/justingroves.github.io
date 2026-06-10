@@ -1,4 +1,4 @@
 import astro from "eslint-plugin-astro";
-import tseslint from "typescript-eslint";
+import { defineConfig } from "astro/config";
 
-export default tseslint.config(...astro.configs.recommended);
+export default defineConfig(...astro.configs.recommended);

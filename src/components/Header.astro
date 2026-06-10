@@ -1,0 +1,22 @@
+---
+import Navigation from "./Navigation.astro"
+import Menu from "./Menu.astro"
+---
+
+<style>
+  header {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    margin-top: 2rem;
+    background-color: aqua;
+    color: green;
+  }
+</style>
+
+<header>
+
+  <Menu />
+
+  <nav><Navigation /></nav>
+</header>
