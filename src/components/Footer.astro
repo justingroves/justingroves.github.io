@@ -1,18 +1,9 @@
 ---
-const platform = "github";
-const username = "justingroves";
-import Social from "./Social.astro"
+const year = new Date().getFullYear();
 ---
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-
-<footer>
-  <Social platform="GitHub" username="justingroves" />
-  <Social platform="LinkedIn" username="justin-a-groves" />
+<footer
+  class="flex justify-center items-center bg-banner text-white text-xs py-1"
+>
+  <span>&copy; {year} Justin Groves. All rights reserved.</span>
 </footer>

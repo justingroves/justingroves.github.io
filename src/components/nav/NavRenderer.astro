@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+import type { navItem } from "../../types/nav";
+
+const {
+  items,
+  variant = "top",
+  class: className = "",
+  linkClass = "",
+  iconClass = "",
+} = Astro.props;
+---
+
+<nav class={className}>
+  {
+    items.map((item: navItem) => (
+      <a
+        href={item.to}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "nonreferrer" : undefined}
+        class={`transition-colors ${linkClass}`}
+      >
+        {variant === "top" && <span>{item.label}</span>}
+
+        {variant === "bottom" && (
+          <div class="flex flex-col items-center gap-1">
+            {item.icon && <Icon name={item.icon} class={iconClass} />}
+            <span class="text-xs">{item.label}</span>
+          </div>
+        )}
+
+        {variant === "icon" && (
+          <span>
+            {item.icon && <Icon name={item.icon} class={iconClass} />}
+          </span>
+        )}
+      </a>
+    ))
+  }
+</nav>

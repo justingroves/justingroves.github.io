@@ -6,32 +6,36 @@ const identity = {
   firstName: "Justin",
   country: "USA",
   occupation: "Sr. Data Scientist",
-  hobbies: ["video games", "coding", "cocktail making"]
-}
+  hobbies: ["video games", "coding", "cocktail making"],
+};
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
-const skillColor = "crimson"
-const fontWeight = "bold"
-const textTransform = "uppercase"
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textTransform = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="about-me">
-
     <h2>Intro</h2>
-    <p>
-      Here are a few facts about me:
-    </p>
+    <p>Here are a few facts about me:</p>
     <ul>
       <li>My name is {identity.firstName}</li>
-      <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-      {identity.hobbies.length >= 2 &&
-        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+      <li>
+        I live in {identity.country} and I work as a {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
       }
     </ul>
     <p>My skills are</p>
@@ -41,44 +45,60 @@ const textTransform = "uppercase"
 
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial</p>}
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
 
     <h2>Who Am I?</h2>
-      <p>
-          Problem solving is a core part of my work, and currently that includes taking messy data and
-          translating it into business solutions. I work across all facets of the data lifecycle including
-          engineering, analytics, and modeling (occasionally with results that are statistically significant.)
-      </p>
+    <p>
+      Problem solving is a core part of my work, and currently that includes
+      taking messy data and translating it into business solutions. I work
+      across all facets of the data lifecycle including engineering, analytics,
+      and modeling (occasionally with results that are statistically
+      significant.)
+    </p>
 
-      <h2>Where Am I?</h2>
-      <p>
-          Currently I'm a Sr. Data Scientist with <a href="https://reefpointgroup.com/" target="_blank">ReefPoint Group</a>,
-          a D.C. based government consulting firm. In my time I've worked extensively with Palantir Foundry
-          and Microsoft Power Platform understanding the business needs of non-technical stakeholders and
-          turning them into data-driven solutions for the VA.
-      </p>
-      <p>
-          Some of my notable projects include building a
-          classification model for detecting demographic collection points in VA forms and building out a full
-          database management system (DBMS) with Microsoft Power Platform for tracking and analyzing
-          <a href="https://pra.digital.gov/" target="_blank">Paperwork Reduction Act (PRA)</a> collections as
-          they move through the approval lifecycle.
-      </p>
-      <h2>Where Will I Be?</h2>
-        <p>
-            My goal is to continue to understand more of the data ecosystem. I aim to understand and implement
-            cloud-based machine learning systems from end-to-end, getting the data out of the warehouses and into
-            the hands of those who need it the most.
-        </p>
-        <p>
-            There's no shortage of tools in the AI landscape, and I aim to leverage those for maximum efficiency.
-            I continue to research and explore Natural Language Processing (NLP) and speech-to-text models (like
-            Open AI's <a href="https://openai.com/index/whisper/" target="_blank">Whisper</a>) to extract insight
-            from spoken word.
-        </p>
+    <h2>Where Am I?</h2>
+    <p>
+      Currently I'm a Sr. Data Scientist with <a
+        href="https://reefpointgroup.com/"
+        target="_blank">ReefPoint Group</a
+      >, a D.C. based government consulting firm. In my time I've worked
+      extensively with Palantir Foundry and Microsoft Power Platform
+      understanding the business needs of non-technical stakeholders and turning
+      them into data-driven solutions for the VA.
+    </p>
+    <p>
+      Some of my notable projects include building a classification model for
+      detecting demographic collection points in VA forms and building out a
+      full database management system (DBMS) with Microsoft Power Platform for
+      tracking and analyzing
+      <a href="https://pra.digital.gov/" target="_blank"
+        >Paperwork Reduction Act (PRA)</a
+      > collections as they move through the approval lifecycle.
+    </p>
+    <h2>Where Will I Be?</h2>
+    <p>
+      My goal is to continue to understand more of the data ecosystem. I aim to
+      understand and implement cloud-based machine learning systems from
+      end-to-end, getting the data out of the warehouses and into the hands of
+      those who need it the most.
+    </p>
+    <p>
+      There's no shortage of tools in the AI landscape, and I aim to leverage
+      those for maximum efficiency. I continue to research and explore Natural
+      Language Processing (NLP) and speech-to-text models (like Open AI's <a
+        href="https://openai.com/index/whisper/"
+        target="_blank">Whisper</a
+      >) to extract insight from spoken word.
+    </p>
 
     <div class="tag-line">
-        <p><em>The future is now, and data is the key to the lock.</em></p>
+      <p><em>The future is now, and data is the key to the lock.</em></p>
     </div>
   </section>
 </BaseLayout>
