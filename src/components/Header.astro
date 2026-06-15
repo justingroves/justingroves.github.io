@@ -5,7 +5,7 @@ import { siteItems, socialItems } from "./nav/navItems";
 import NavRenderer from "./nav/NavRenderer.astro";
 ---
 
-<header class="bg-banner py-4 border-b-2 border-white">
+<header class="bg-banner py-4 border-b-2 border-border">
   <!-- Desktop Header -->
   <nav class="hidden md:block px-6">
     <div class="flex justify-between">
@@ -19,7 +19,7 @@ import NavRenderer from "./nav/NavRenderer.astro";
         <NavRenderer
           items={socialItems}
           variant="icon"
-          class="flex gap-6 items-center"
+          class="flex gap-2 items-center"
           linkClass="text-link hover:text-link-hover font-semibold"
           iconClass="text-4xl"
         />
@@ -31,7 +31,7 @@ import NavRenderer from "./nav/NavRenderer.astro";
   <!-- Mobile Header -->
   <nav class="md:hidden sticky">
     <div class="relative flex justify-center items-center">
-      <div class="font-logo text-white text-3xl">Justin Groves</div>
+      <div class="font-logo text-text text-3xl">Justin Groves</div>
       <div class="absolute items-center right-2"><ThemeIcon /></div>
     </div>
   </nav>

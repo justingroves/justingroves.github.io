@@ -1,59 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Justin",
-  country: "USA",
-  occupation: "Sr. Data Scientist",
-  hobbies: ["video games", "coding", "cocktail making"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textTransform = "uppercase";
+import { Image } from "astro:assets";
+import profilePicture from "../assets/profile-picture.jpg";
+const pageTitle = "Bio";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="about-me">
-    <h2>Intro</h2>
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}</li>
-      <li>
-        I live in {identity.country} and I work as a {identity.occupation}.
-      </li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{" "}
-            {identity.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-    <p>My skills are</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+  <section>
+    <div class="flex flex-col md:flex-row items-center gap-4">
+      <div class="w-full md:w-1/3 shrink-0">
+        <Image
+          src={profilePicture}
+          alt="A photo of Justin Groves overlooking a lake."
+          class="w-full rounded-full"
+        />
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center w-full md:w-2/3 gap-6"
+      >
+        <h2 class="font-logo text-4xl small-caps">Justin Groves, PhD</h2>
+        <p class="tag-line">Sr. Data Scientist & Machine Learning Enthusiast</p>
+      </div>
+    </div>
 
-    {happy && <p>I am happy to be learning Astro!</p>}
-    {finished && <p>I finished this tutorial</p>}
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not 3 days.</p>
-      )
-    }
+    <div class="flex justify-center items-center">
+      <p class="tag-line">
+        The Doctor is in.
+        <sup id="ref-1">
+          <a href="#fn-1" class="text-xs link">1</a>
+        </sup>
+      </p>
+    </div>
 
-    <h2>Who Am I?</h2>
     <p>
       Problem solving is a core part of my work, and currently that includes
       taking messy data and translating it into business solutions. I work
@@ -62,11 +40,12 @@ const textTransform = "uppercase";
       significant.)
     </p>
 
-    <h2>Where Am I?</h2>
+    <h2>What Do I Do?</h2>
     <p>
       Currently I'm a Sr. Data Scientist with <a
         href="https://reefpointgroup.com/"
-        target="_blank">ReefPoint Group</a
+        target="_blank"
+        class="link">ReefPoint Group</a
       >, a D.C. based government consulting firm. In my time I've worked
       extensively with Palantir Foundry and Microsoft Power Platform
       understanding the business needs of non-technical stakeholders and turning
@@ -77,7 +56,7 @@ const textTransform = "uppercase";
       detecting demographic collection points in VA forms and building out a
       full database management system (DBMS) with Microsoft Power Platform for
       tracking and analyzing
-      <a href="https://pra.digital.gov/" target="_blank"
+      <a href="https://pra.digital.gov/" target="_blank" class="link"
         >Paperwork Reduction Act (PRA)</a
       > collections as they move through the approval lifecycle.
     </p>
@@ -93,12 +72,24 @@ const textTransform = "uppercase";
       those for maximum efficiency. I continue to research and explore Natural
       Language Processing (NLP) and speech-to-text models (like Open AI's <a
         href="https://openai.com/index/whisper/"
-        target="_blank">Whisper</a
+        target="_blank"
+        class="link">Whisper</a
       >) to extract insight from spoken word.
     </p>
 
-    <div class="tag-line">
-      <p><em>The future is now, and data is the key to the lock.</em></p>
+    <div class="flex justify-center items-center">
+      <p class="tag-line">
+        The future is now, and data is the key to the lock.
+      </p>
     </div>
+
+    <hr class="my-8" />
+
+    <ol class="text-xs">
+      <li id="fn-1">
+        Non-statistically significant results may vary.
+        <a href="#ref-1" class="ml-2 link">↩</a>
+      </li>
+    </ol>
   </section>
 </BaseLayout>

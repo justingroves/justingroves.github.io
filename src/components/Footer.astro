@@ -1,9 +1,48 @@
 ---
+import NavRenderer from "./nav/NavRenderer.astro";
+import { siteItems } from "./nav/navItems";
+
 const year = new Date().getFullYear();
 ---
 
 <footer
-  class="flex justify-center items-center bg-banner text-white text-xs py-1"
+  id="mobile-footer"
+  class="flex justify-center items-center bg-banner text-text text-xs py-1"
 >
   <span>&copy; {year} Justin Groves. All rights reserved.</span>
 </footer>
+
+<NavRenderer
+  items={siteItems}
+  variant="bottom"
+  id="mobile-nav"
+  class="fixed bottom-0 left-0 right-0
+    h-14 border-t
+    bg-banner
+    flex justify-around items-center divide-x divide-text-h
+    transition-transform transform duration-300
+    md:hidden"
+  linkClass="flex flex-col flex-1 gap-1 text-center font-semibold"
+  iconClass="text-2xl"
+/>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const nav = document.getElementById("mobile-nav");
+  const threshold = 10;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    if (Math.abs(delta) < threshold) return;
+
+    if (delta > 0) {
+      nav?.classList.add("translate-y-full");
+    } else {
+      nav?.classList.remove("translate-y-full");
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>

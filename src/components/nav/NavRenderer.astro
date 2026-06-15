@@ -5,13 +5,14 @@ import type { navItem } from "../../types/nav";
 const {
   items,
   variant = "top",
+  id = "",
   class: className = "",
   linkClass = "",
   iconClass = "",
 } = Astro.props;
 ---
 
-<nav class={className}>
+<nav id={id} class={className}>
   {
     items.map((item: navItem) => (
       <a

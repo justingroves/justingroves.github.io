@@ -5,11 +5,13 @@
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@tailwind utilities;
 
 @theme {
   /* Colors */
   --color-text: var(--text);
   --color-text-h: var(--text-h);
+  --color-text-tag: var(--text-tag);
   --color-bg: var(--bg);
   --color-border: var(--border);
   --color-banner: var(--banner);
@@ -24,14 +26,70 @@
   --font-callout: var(--callout);
 }
 
+@layer base {
+  h1 {
+    @apply text-4xl font-bold tracking-tight text-link;
+    line-height: 1.1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight text-text-h;
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-text-h;
+  }
+
+  p {
+    @apply mt-4 mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-5;
+  }
+
+  ol {
+    @apply list-decimal pl-5;
+  }
+
+  a {
+    @apply text-link transition-colors;
+  }
+
+  a:hover {
+    @apply text-link-hover;
+  }
+}
+
+@layer utilities {
+  .small-caps {
+    font-variant: small-caps;
+  }
+}
+
+@layer components {
+  .tag-line {
+    @apply italic font-medium text-text-tag text-xl text-center tracking-wide;
+  }
+  .link {
+    @apply text-link hover:text-link-hover font-semibold underline decoration-transparent hover:decoration-current transition-all duration-150;
+  }
+}
+
 :root {
-  --text: rgb(0 0 0);
-  --text-h: rgb(150 205 176);
-  --bg: rgb(119, 132, 156);
-  --border: rgb(24, 67, 146);
-  --banner: rgb(31, 42, 55);
-  --link: rgb(255, 190, 182);
-  --link-hover: rgb(255, 140, 125);
+  --text: rgb(30 41 59);
+  --text-h: rgb(2, 116, 55);
+  --text-tag: rgb(51, 65, 85);
+  --bg: rgb(255, 255, 255);
+  --border: rgb(59 89 152);
+  --banner: rgb(162, 209, 248);
+  --link: rgb(131, 46, 3);
+  --link-hover: rgb(190 65 50);
 
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -53,102 +111,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  /* max-width: 80ch; */
-  /* padding: 1rem; */
-  line-height: 1.5;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
-
-/* nav styles */
-.menu {
-  /* background-color: #0d0950; */
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: #ff9776;
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-
-  .menu {
-    display: none;
-  }
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .menu {
-  background-color: #fff;
-  color: #000;
-}
-
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
-  color: #0d0950;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
-
-.dark a {
-  color: #ff9776;
+.dark {
+  --text: rgb(226 232 240); /* slate-200 */
+  --text-h: rgb(109, 248, 174); /* existing green */
+  --text-tag: rgb(202, 213, 226);
+  --bg: rgb(8, 18, 43); /* slate-900 */
+  --border: rgb(59 130 246); /* brighter blue */
+  --banner: rgb(8 15 25); /* darker header */
+  --link: rgb(250 109 37); /* existing salmon */
+  --link-hover: rgb(255 140 125);
 }
