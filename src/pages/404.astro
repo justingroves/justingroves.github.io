@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "404 Error - Page Not Found";
+const pathName = Astro.url.pathname;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <div
+      class="flex justify-center items-center min-h-screen text-center text-3xl text-text-h font-logo"
+    >
+      The requested page cannot be found.
+    </div>
+  </section>
+</BaseLayout>

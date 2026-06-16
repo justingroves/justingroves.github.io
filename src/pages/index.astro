@@ -1,8 +1,59 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "My Home Page";
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero_image.jpg";
+import { siteItems } from "../components/nav/navItems";
+import { blogTitle } from "./blog.astro";
+
+const pageTitle = "Home";
+const bioPage = siteItems.find((site) => site.id === "bio");
+const blogPage = siteItems.find((site) => site.id === "blog");
+const tagsPage = siteItems.find((site) => site.id === "tags");
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <div class="text-text-h text-2xl">My Awesome Blog Subtitle</div>
-</BaseLayout>
+<BaseLayout pageTitle={""} htmlTitle="Justin Groves, PhD" class="">
+  <div class="flex flex-col md:flex-row">
+    <Image
+      src={heroImage}
+      alt="Justin Groves looking to the right through a pair of binoculars."
+      class="opacity-0 transition-opacity duration-1000 ease-out md:max-h-125 md:max-w-2/3 w-auto"
+      onload="this.classList.add('opacity-100')"
+    />
+    <div
+      class="flex flex-1 flex-col justify-center items-center
+        bg-hero-bg font-light text-4xl text-white"
+    >
+      <p class="font-handwritten mb-2">Hey, look!</p>
+      <p class="font-callout mt-2">There you are!</p>
+    </div>
+  </div>
+
+  <div class="mx-auto px-10">
+    <h2>Welcome to My Corner of the Internet</h2>
+
+    <p>
+      Thanks for stopping by.
+      <ul>
+        <li>
+          If you'd like to learn more about me, check out my <a
+            href={bioPage?.to}>{bioPage?.label}.</a
+          >
+        </li>
+        <li>
+          If you want to learn what I've been working on, stroll through my blog
+          - <a href={blogPage?.to}>{blogTitle}</a>!
+        </li>
+        <li>
+          Got a particular topic in mind? Search through the blog <a
+            href={tagsPage?.to}>{tagsPage?.label}.</a
+          >
+        </li>
+      </ul>
+    </p>
+
+    <h2>Latest Blogs</h2>
+    <p class="flex justify-center font-handwritten text-2xl">
+      🚧 Under construction 🚧
+    </p>
+  </div></BaseLayout
+>

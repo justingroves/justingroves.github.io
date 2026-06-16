@@ -4,10 +4,10 @@ import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
-const pageTitle = "My Astro Learning Blog";
+export const blogTitle = "The Unsupervised Learner";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={blogTitle}>
   <p>This is where I'll start posting junk</p>
   <ul>
     {

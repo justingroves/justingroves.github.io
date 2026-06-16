@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?&family=Instrument+Serif:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -17,6 +19,7 @@
   --color-banner: var(--banner);
   --color-link: var(--link);
   --color-link-hover: var(--link-hover);
+  --color-hero-bg: var(--hero-bg);
 
   /* Fonts */
   --font-sans: var(--sans);
@@ -24,6 +27,7 @@
   --font-mono: var(--mono);
   --font-logo: var(--logo);
   --font-callout: var(--callout);
+  --font-handwritten: var(--handwritten);
 }
 
 @layer base {
@@ -90,6 +94,7 @@
   --banner: rgb(162, 209, 248);
   --link: rgb(131, 46, 3);
   --link-hover: rgb(190 65 50);
+  --hero-bg: rgb(82, 138, 212);
 
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -99,6 +104,7 @@
   --mono: ui-monospace, Consolas, monospace;
   --logo: "Libre Baskerville", system-ui, serif;
   --callout: "Montserrat", system-ui, sans-serif;
+  --handwritten: "Caveat", system-ui, sans-serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -120,4 +126,5 @@
   --banner: rgb(8 15 25); /* darker header */
   --link: rgb(250 109 37); /* existing salmon */
   --link-hover: rgb(255 140 125);
+  --hero-bg: rgb(164, 109, 78);
 }

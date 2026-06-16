@@ -5,8 +5,10 @@ import "../styles/global.css";
 
 const {
   pageTitle,
+  htmlTitle = pageTitle,
   description = "Senior Data Scientist, PhD mathematician, software developer, and writer.",
   ogImage = "/og-image.png",
+  class: className = "mx-auto max-w-4xl px-6 py-10",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -34,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Open Graph elements -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={pageTitle} />
+    <meta property="og:title" content={htmlTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
     <meta property="og:url" content={canonicalURL} />
@@ -44,7 +46,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.ico" />
 
-    <title>{pageTitle}</title>
+    <title>{htmlTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Justin Groves" />
   </head>
@@ -55,11 +57,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <Header />
 
       <!-- MAIN CONTENT -->
-      <main class="flex-1">
-        <div class="mx-auto max-w-4xl px-6 py-10">
-          <h1>{pageTitle}</h1>
-          <slot />
-        </div>
+      <main class=`flex-1 ${className}`>
+        {pageTitle?.trim() && <h1>{pageTitle}</h1>}
+        <slot />
       </main>
 
       <Footer />

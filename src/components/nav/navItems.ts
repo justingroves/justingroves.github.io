@@ -8,9 +8,9 @@ export const siteItems: navItem[] = [
     icon: "lets-icons:home-duotone",
   },
   {
-    id: "about",
-    label: "About",
-    to: "/about",
+    id: "bio",
+    label: "Bio",
+    to: "/bio",
     icon: "streamline-logos:about-me-logo-block",
   },
   {
