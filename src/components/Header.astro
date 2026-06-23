@@ -1,0 +1,38 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+
+import { siteItems, socialItems } from "./nav/navItems";
+import NavRenderer from "./nav/NavRenderer.astro";
+---
+
+<header class="bg-banner py-4 border-b-2 border-border">
+  <!-- Desktop Header -->
+  <nav class="hidden max-w-auto md:block px-6">
+    <div class="flex justify-between">
+      <NavRenderer
+        items={siteItems}
+        variant="top"
+        class="flex justify-center items-start gap-6 text-3xl"
+        linkClass="text-link hover:text-link-hover font-semibold"
+      />
+      <div class="flex flex-row gap-6">
+        <NavRenderer
+          items={socialItems}
+          variant="icon"
+          class="flex gap-2 items-center"
+          linkClass="text-link hover:text-link-hover font-semibold"
+          iconClass="text-4xl"
+        />
+        <ThemeIcon />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Header -->
+  <nav class="md:hidden sticky">
+    <div class="relative flex justify-center items-center">
+      <div class="font-logo text-text text-3xl">Justin Groves</div>
+      <div class="absolute items-center right-2"><ThemeIcon /></div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import trimBlogDesc from "../scripts/trimBlogDesc";
+
+const { url, title, desc, pubDate, imageURL, imageAlt } = Astro.props;
+
+const thumbnailImage = import(`../assets/blog_images/${imageURL}`);
+
+const shortDesc = trimBlogDesc(desc, 250);
+
+const formatter = new Intl.DateTimeFormat("en-us", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+
+const shortDate = formatter.format(pubDate);
+---
+
+<a
+  href={url}
+  class="group block rounded-xl overflow-hidden
+    border-border border
+    hover:shadow-lg transition-shadow"
+>
+  <div
+    class="grid
+    grid-cols-[min(90vw, 400px)] grid-rows-2
+    md:grid-cols-[300px_1fr] md:grid-rows-[275px] md:gap-x-4"
+  >
+    <div class="group-hover:scale-105 transition-transform duration-300">
+      <Image
+        src={thumbnailImage}
+        alt={imageAlt}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="row-span-2 p-4 space-y-2">
+      <h2>{title}</h2>
+      <p class="text-text italic">{shortDate}</p>
+      <p class="text-text text-sm md:text-base">{shortDesc}</p>
+    </div>
+  </div>
+</a>

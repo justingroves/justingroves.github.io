@@ -1,0 +1,45 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { blogTitle } from "../pages/blog.astro";
+import { Image } from "astro:assets";
+
+const { frontmatter } = Astro.props;
+const thumbnailImage = import(`../assets/blog_images/${frontmatter.image.url}`);
+---
+
+<BaseLayout
+  pageTitle={frontmatter.title}
+  htmlTitle={`${frontmatter.title} | ${blogTitle}`}
+>
+  <p>Published on {frontmatter.pubDate.toLocaleDateString()}</p>
+  <p>Written by {frontmatter.author}</p>
+  <p><em>{frontmatter.description}</em></p>
+
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+
+  <slot />
+</BaseLayout>
+
+<style>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+</style>
