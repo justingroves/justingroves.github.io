@@ -6,7 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import rehypeMathjax from "rehype-mathjax";
+// import rehypeMathjax from "rehype-mathjax";
+import { unified } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,8 +19,10 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
-    // rehypePlugins: [rehypeMathjax],
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+      // rehypePlugins: [rehypeMathjax],
+    }),
   },
 });
