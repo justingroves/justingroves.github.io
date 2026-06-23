@@ -4,27 +4,35 @@ import { Image } from "astro:assets";
 import heroImage from "../assets/hero_image.jpg";
 import { siteItems } from "../components/nav/navItems";
 import { blogTitle } from "./blog.astro";
+import BlogPost from "../components/BlogPost.astro";
+import { getCollection } from "astro:content";
 
-const pageTitle = "Home";
+const pageTitle = "";
 const bioPage = siteItems.find((site) => site.id === "bio");
 const blogPage = siteItems.find((site) => site.id === "blog");
 const tagsPage = siteItems.find((site) => site.id === "tags");
+const allPosts = await getCollection("blog");
 ---
 
-<BaseLayout pageTitle={""} htmlTitle="Justin Groves, PhD" class="">
+<BaseLayout pageTitle={pageTitle} htmlTitle="Justin Groves, PhD" class="">
   <div class="flex flex-col md:flex-row">
     <Image
       src={heroImage}
       alt="Justin Groves looking to the right through a pair of binoculars."
-      class="opacity-0 transition-opacity duration-1000 ease-out md:max-h-125 md:max-w-2/3 w-auto"
+      class="opacity-100 transition-opacity duration-2000 ease-out md:max-h-125 md:max-w-2/3 w-auto"
       onload="this.classList.add('opacity-100')"
     />
     <div
       class="flex flex-1 flex-col justify-center items-center
         bg-hero-bg font-light text-4xl text-white"
     >
-      <p class="font-handwritten mb-2">Hey, look!</p>
-      <p class="font-callout mt-2">There you are!</p>
+      <p class="font-sans mb-2">Hey, look!</p>
+      <p
+        id="intro-text"
+        class="opacity-0 transition-opacity duration-3000 ease-out font-sans mt-2"
+      >
+        I found you
+      </p>
     </div>
   </div>
 
@@ -52,8 +60,32 @@ const tagsPage = siteItems.find((site) => site.id === "tags");
     </p>
 
     <h2>Latest Blogs</h2>
-    <p class="flex justify-center font-handwritten text-2xl">
-      🚧 Under construction 🚧
-    </p>
+    <div class="flex flex-col gap-6">
+      {
+        allPosts
+          .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+          .slice(0, 3)
+          .map((post: any) => (
+            <BlogPost
+              url={`/posts/${post.id}/`}
+              title={post.data.title}
+              desc={post.data.description}
+              pubDate={post.data.pubDate}
+              imageURL={post.data.image.url}
+              imageAlt={post.data.image.alt}
+            />
+          ))
+      }
+    </div>
   </div></BaseLayout
 >
+
+<script>
+  window.addEventListener("load", () => {
+    const el = document.getElementById("intro-text");
+
+    setTimeout(() => {
+      el?.classList.add("opacity-100", "translate-y-0");
+    }, 200);
+  });
+</script>

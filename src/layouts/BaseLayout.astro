@@ -8,7 +8,7 @@ const {
   htmlTitle = pageTitle,
   description = "Senior Data Scientist, PhD mathematician, software developer, and writer.",
   ogImage = "/og-image.png",
-  class: className = "mx-auto max-w-4xl px-6 py-10",
+  class: className = "md:mx-auto max-w-4xl px-6",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -45,6 +45,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Link Tags -->
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.ico" />
+    <!-- LaTeX compiler -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
+    />
 
     <title>{htmlTitle}</title>
     <meta name="description" content={description} />
@@ -57,7 +62,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <Header />
 
       <!-- MAIN CONTENT -->
-      <main class=`flex-1 ${className}`>
+      <main class=`flex-1 pb-6 ${className}`>
         {pageTitle?.trim() && <h1>{pageTitle}</h1>}
         <slot />
       </main>

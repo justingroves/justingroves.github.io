@@ -4,10 +4,19 @@
 @import url("https://fonts.googleapis.com/css2?&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @tailwind utilities;
+
+@font-face {
+  font-family: "Ferrum";
+  src: url("/fonts/ferrum.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   /* Colors */
@@ -102,7 +111,7 @@
   --sans: "Nunito Sans", system-ui, sans-serif;
   --heading: "Instrument Serif", system-ui, serif;
   --mono: ui-monospace, Consolas, monospace;
-  --logo: "Libre Baskerville", system-ui, serif;
+  --logo: "Ferrum", system-ui, serif;
   --callout: "Montserrat", system-ui, sans-serif;
   --handwritten: "Caveat", system-ui, sans-serif;
 
@@ -127,4 +136,12 @@
   --link: rgb(250 109 37); /* existing salmon */
   --link-hover: rgb(255 140 125);
   --hero-bg: rgb(164, 109, 78);
+}
+
+.katex-display {
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: nowrap;
+  display: block;
+  -webkit-overflow-scrolling: touch;
 }

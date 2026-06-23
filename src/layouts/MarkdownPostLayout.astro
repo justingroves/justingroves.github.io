@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { blogTitle } from "../pages/blog.astro";
+import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
+const thumbnailImage = import(`../assets/blog_images/${frontmatter.image.url}`);
 ---
 
 <BaseLayout
   pageTitle={frontmatter.title}
   htmlTitle={`${frontmatter.title} | ${blogTitle}`}
 >
-  <img width="300" src={frontmatter.image.url} alt={frontmatter.image.alt} />
   <p>Published on {frontmatter.pubDate.toLocaleDateString()}</p>
   <p>Written by {frontmatter.author}</p>
   <p><em>{frontmatter.description}</em></p>
@@ -28,10 +29,6 @@ const { frontmatter } = Astro.props;
 </BaseLayout>
 
 <style>
-  a {
-    color: #00539f;
-  }
-
   .tags {
     display: flex;
     flex-wrap: wrap;

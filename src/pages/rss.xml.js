@@ -4,8 +4,9 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const posts = await getCollection("blog");
   return rss({
-    title: "Astro Learner | Blog",
-    description: "My journey learning Astro",
+    title: "The Unsupervised Learner",
+    description:
+      "Personal blog of Justin Groves - data scientist, software engineer, mathematician, and most importantly - dad.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,

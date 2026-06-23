@@ -8,12 +8,24 @@ export const blogTitle = "The Unsupervised Learner";
 ---
 
 <BaseLayout pageTitle={blogTitle}>
-  <p>This is where I'll start posting junk</p>
-  <ul>
+  <p>
+    Personal blog of Justin Groves - mathematician, data scientist, software
+    engineer, and most importantly, Dad.
+  </p>
+  <div class="flex flex-col gap-6">
     {
-      allPosts.map((post: any) => (
-        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
-      ))
+      allPosts
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+        .map((post: any) => (
+          <BlogPost
+            url={`/posts/${post.id}/`}
+            title={post.data.title}
+            desc={post.data.description}
+            pubDate={post.data.pubDate}
+            imageURL={post.data.image.url}
+            imageAlt={post.data.image.alt}
+          />
+        ))
     }
-  </ul>
+  </div>
 </BaseLayout>

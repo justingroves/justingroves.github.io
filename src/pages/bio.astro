@@ -3,6 +3,46 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import profilePicture from "../assets/profile-picture.jpg";
 const pageTitle = "Bio";
+
+const tools = [
+  {
+    label: "Supabase",
+    to: "https://supabase.com/",
+    description: "Cloud based database hosting",
+  },
+  {
+    label: "PostgreSQL",
+    to: "https://www.postgresql.org/",
+    description: "Open source object relational database system",
+  },
+  {
+    label: "Python",
+    to: "https://www.python.org/",
+    description:
+      "General purpose programming language with machine learning and AI capabilities",
+  },
+  {
+    label: "Ray",
+    to: "https://docs.ray.io/en/latest/index.html",
+    description: "Python framework to scale AI in cloud based systems",
+  },
+  {
+    label: "FastAPI",
+    to: "https://fastapi.tiangolo.com/",
+    description: "Web framework for building APIs in Python",
+  },
+  {
+    label: "React",
+    to: "https://react.dev/",
+    description:
+      "Frontend JavaScript library for building quick web applications",
+  },
+  {
+    label: "Astro",
+    to: "https://astro.build/",
+    description: "JavaScript framework for building my personal blog",
+  },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -23,8 +63,8 @@ const pageTitle = "Bio";
       </div>
     </div>
 
-    <div class="flex justify-center items-center">
-      <p class="tag-line">
+    <div class="flex justify-center items-center pt-5">
+      <p class="tag-line text-3xl">
         The Doctor is in.
         <sup id="ref-1">
           <a href="#fn-1" class="text-xs link">1</a>
@@ -39,7 +79,8 @@ const pageTitle = "Bio";
       and modeling.
     </p>
 
-    <h2>What Do I Do?</h2>
+    <h2>What I Do</h2>
+
     <p>
       Currently I'm a Sr. Data Scientist with <a
         href="https://reefpointgroup.com/"
@@ -50,6 +91,12 @@ const pageTitle = "Bio";
       understanding the business needs of non-technical stakeholders and turning
       them into data-driven solutions for the VA.
     </p>
+
+    <p class="tag-line">
+      Check out <a target="_blank" class="link" href="/resume.pdf">my resume</a> to
+      see my full breadth of experience.
+    </p>
+
     <p>
       Some of my notable projects include building a classification model for
       detecting demographic collection points in VA forms and building out a
@@ -61,26 +108,47 @@ const pageTitle = "Bio";
     </p>
 
     <p>
-      My background includes a PhD in mathematics from <a
+      My background includes a PhD in Mathematics with a minor in Data Science &
+      Statistics from <a
+        class="link"
+        target="_blank"
         href="https://math.utk.edu/">The University of Tennessee - Knoxville</a
       > where I researched applications of <a
+        class="link"
+        target="_blank"
         href="https://en.wikipedia.org/wiki/Elliptic_curve">elliptic curves</a
-      > to <a href="https://en.wikipedia.org/wiki/Error_correction_code"
-        >error-correcting codes</a
-      >. I also possess a minor in Data Science and Statistics.
+      > to <a
+        class="link"
+        target="_blank"
+        href="https://en.wikipedia.org/wiki/Error_correction_code"
+        >error-correcting codes (ECC)</a
+      >. You can read all about it in <a
+        class="link"
+        target="_blank"
+        href="https://trace.tennessee.edu/handle/20.500.14382/29893"
+        >my dissertation</a
+      >.
     </p>
 
-    <h2>Where Will I Be?</h2>
+    <h2>What I Explore</h2>
     <p>
-      My goal is to continue to understand more of the data ecosystem. I aim to
-      understand and implement cloud-based machine learning systems from
-      end-to-end, getting the data out of the warehouses and into the hands of
-      those who need it the most.
+      My recent interests have been building full-stack systems leveraging
+      modern framework tools, like
+      <ul>
+        {
+          tools.map((tool) => (
+            <li>
+              <a href={tool.to}>{tool.label}</a> - {tool.description}
+            </li>
+          ))
+        }
+      </ul>
     </p>
     <p>
-      There's no shortage of tools in the AI landscape, and I aim to leverage
-      those for maximum efficiency. I continue to research and explore Natural
-      Language Processing (NLP) and speech-to-text models (like Open AI's <a
+      There's no shortage of tools in the AI landscape, and I look for those
+      that help people cut through all the noise and bloat to get to the heart
+      of their problems. I continue to research and explore Natural Language
+      Processing (NLP) and speech-to-text models (like Open AI's <a
         href="https://openai.com/index/whisper/"
         target="_blank"
         class="link">Whisper</a
