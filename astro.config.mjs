@@ -11,7 +11,7 @@ import { unified } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.justingroves.com",
+  site: "https://justingroves.com",
   integrations: [preact(), mdx(), icon()],
 
   vite: {
