@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { blogTitle } from "../pages/blog.astro";
-import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
-const thumbnailImage = import(`../assets/blog_images/${frontmatter.image.url}`);
 ---
 
 <BaseLayout
