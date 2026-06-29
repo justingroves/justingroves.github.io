@@ -83,6 +83,9 @@
   .small-caps {
     font-variant: small-caps;
   }
+  .katex-display {
+    @apply block max-w-full whitespace-nowrap overflow-x-auto overflow-y-hidden md:overflow-visible;
+  }
 }
 
 @layer components {
@@ -136,12 +139,4 @@
   --link: rgb(250 109 37); /* existing salmon */
   --link-hover: rgb(255 140 125);
   --hero-bg: rgb(164, 109, 78);
-}
-
-.katex-display {
-  overflow-x: auto;
-  max-width: 100%;
-  white-space: nowrap;
-  display: block;
-  -webkit-overflow-scrolling: touch;
 }
