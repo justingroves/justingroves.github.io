@@ -1,0 +1,17 @@
+[project]
+name = "justingroves-github-io"
+version = "0.1.0"
+description = "Python Jupyter notebooks to support my blog articles."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "ipython>=9.15.0",
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.6.2",
+    "kagglehub>=1.0.2",
+    "numpy>=2.5.1",
+    "pandas>=3.0.3",
+    "pathlib>=1.0.1",
+    "scipy>=1.18.0",
+]
